@@ -115,7 +115,7 @@ cp -r "$BUILD_PATH"/bin/templates/project/assets "$PROJECT_PATH"
 cp -r "$BUILD_PATH"/bin/templates/project/res "$PROJECT_PATH"
 
 # copy cordova.js, cordova.jar and res/xml
-if [ -d "$BUILD_PATH"/framework ]
+if [ ! -e "$BUILD_PATH"/cordova-$VERSION.jar ] && [ -d "$BUILD_PATH"/framework ]
 then
     cp -r "$BUILD_PATH"/framework/res/xml "$PROJECT_PATH"/res
     cp "$BUILD_PATH"/framework/assets/www/cordova-$VERSION.js "$PROJECT_PATH"/assets/www/cordova-$VERSION.js
